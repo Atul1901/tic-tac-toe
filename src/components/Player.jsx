@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+// interface Data {
+//   name: String
+// }
+
 export default function Player({ name, symbol }) {
   const [currentName, setName] = useState(name);
   const [isEditing, setIsEditing] = useState(false);
