@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-// interface Data {
-//   name: String
-// }
-
-export default function Player({ name, symbol }) {
+export default function Player({ name, symbol, isActive }) {
   const [currentName, setName] = useState(name);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -23,10 +19,10 @@ export default function Player({ name, symbol }) {
     playerName = (
       <input type="text" required value={currentName} onChange={handleName} />
     );
-    buttonCaption = "Save";
+    // buttonCaption = "Save";
   }
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className="player">
         {playerName}
         <span className="player-name">{symbol}</span>
